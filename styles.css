@@ -1,0 +1,175 @@
+/*----------------------------------------------------------------------------
+Mobile Design First / Fallback
+------------------------------------------------------------------------------*/
+
+/*-------------
+Variables
+---------------*/
+:root {
+    /* Primary colors */
+    --clr-primary-1: hsl(185, 75%, 39%);
+    --clr-primary-2: hsl(184, 100%, 22%);
+    --clr-primary-3: hsl(179, 100%, 13%);
+
+    /* Neutral colors */
+    --clr-secondary: hsl(0, 0%, 59%);
+
+    /* Fonts */
+    --ff-primary: 'Kumbh Sans', sans-serif;
+}
+
+/*-------------
+Global Styles
+---------------*/
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-primary-1);
+}
+main {
+    background-color: white;
+    height: 65vh;
+    max-height: 370px;
+    width: 85vw;
+    max-width: 375px;
+    border-radius: 15px;
+}
+footer {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+}
+footer a {
+    color: var(--clr-primary-3);
+    text-decoration: none;
+}
+
+/*-------------
+Class Styles
+---------------*/
+/* Background */
+.top-left {
+    background-image: url("/images/bg-pattern-top.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 500px;
+    z-index: -1;
+    position: fixed;
+    left: -200px;
+    top: -200px;
+}
+.bottom-right {
+    background-image: url("/images/bg-pattern-bottom.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 375px;
+    height: 500px;
+    z-index: -1;
+    position: fixed;
+    bottom: -250px;
+    right: -230px;
+}
+@media screen and (min-width: 750px) {
+    .top-left {
+        width: 500px;
+        height: 575px;
+        top: -110px;
+    }
+    .bottom-right {
+        width: 500px;
+        height: 575px;
+        bottom: -250px;
+        right: -230px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .top-left,
+    .bottom-right {
+        width: 750px;
+        height: 750px;
+    }
+}
+
+/* Main */
+.profile-bg {
+    background-image: url("/images/bg-pattern-card.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.avatar img {
+    border-radius: 100%;
+    margin-top: -3rem;
+    border: 5px solid white;
+}
+
+/* Profile Info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    height: 15%;
+}
+.profile-info .name {
+    font-weight: 700;
+}
+.profile-info span {
+    font-weight: 400;
+    color: var(--clr-secondary);
+}
+.profile-info .city {
+    font-weight: 400;
+    font-size: 0.80rem;
+    color: var(--clr-secondary);
+    margin-top: 0.4rem;
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--clr-secondary);
+    height: 25%;
+}
+.followers,
+.likes,
+.photos {
+    margin: auto 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.numbers {
+    font-weight: 700;
+}
+.category {
+    font-size: 0.75rem;
+    color: var(--clr-secondary);
+}
